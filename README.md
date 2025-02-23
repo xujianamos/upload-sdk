@@ -170,9 +170,9 @@ npm run dev
 
 SDK 支持多个产品线的特定需求：
 
-- centralKitchen（中央厨房）
-  - Web 端：`centralKitchen-web`
-  - Mac 端：`centralKitchen-mac`
+- productName（产品名称）
+  - Web 端：`productName-web`
+  - Mac 端：`productName-mac`
  
 
 ### 使用方法
@@ -181,7 +181,7 @@ SDK 支持多个产品线的特定需求：
 import UploadSDK from 'upload-sdk';
 
 // 创建产品特定的上传实例
-const blurrrUploader = new UploadSDK.products['centralKitchen-web']({
+const productNameUploader = new UploadSDK.products['productName-web']({
   bucket: 'your-bucket',
   accessKey: 'your-access-key',
   secretKey: 'your-secret-key',
@@ -189,7 +189,7 @@ const blurrrUploader = new UploadSDK.products['centralKitchen-web']({
 });
 
 // 上传文件
-const result = await blurrrUploader.upload(file, {
+const result = await productNameUploader.upload(file, {
   onProgress: (progress) => {
     console.log('上传进度：', progress);
   }
@@ -228,21 +228,21 @@ interface ProductOptions extends UploaderOptions {
    - 提供详细的错误信息
 ### 示例代码
 ```javascript
-// centralKitchen Web 端特定功能
-const centralKitchenUploader = new UploadSDK.products['centralKitchen-web']({
+// productName Web 端特定功能
+const productNameUploader = new UploadSDK.products['productName-web']({
   bucket: 'your-bucket',
   accessKey: 'your-access-key',
   secretKey: 'your-secret-key',
   domain: 'your-domain',
-  productId: 'centralKitchen',
+  productId: 'productName',
   version: '1.0.0'
 });
 
 // 使用产品特定的上传选项
-const result = await centralKitchenUploader.upload(file, {
+const result = await productNameUploader.upload(file, {
   watermark: true,           // 添加水印
   quality: 'high',           // 图片质量
-  effect: 'centralKitchen',           // 特效类型
+  effect: 'productName',           // 特效类型
   onProgress: (progress) => {
     console.log('上传进度：', progress);
   }
