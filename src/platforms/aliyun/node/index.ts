@@ -1,6 +1,10 @@
-import { UploadResult, ProgressCallback } from '@shared/types/uploader';
+import { UploadResult, ProgressCallback, UploaderOptions } from '@/common/types/uploader';
 
 export class AliyunNodeUploader {
+  private options: UploaderOptions;
+  constructor(options: UploaderOptions) {
+    this.options = options;
+  }
   async upload(
     file: File,
     params: {

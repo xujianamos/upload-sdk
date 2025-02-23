@@ -1,6 +1,6 @@
 import * as qiniu from 'qiniu-js';
-import { UploaderOptions, UploadResult, ProgressCallback } from '../../../shared/types/uploader';
-import { TokenError, UploadError } from '../../../shared/utils/errors';
+import { UploaderOptions, UploadResult, ProgressCallback } from '../../../common/types/uploader';
+import { TokenError, UploadError } from '../../../common/utils/errors';
 import { calculateFileHash } from '../../../web/utils/file';
 import { Extra, Config } from 'qiniu-js/esm/upload/base';
 

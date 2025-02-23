@@ -1,7 +1,7 @@
 import * as qiniu from 'qiniu';
 import { createReadStream } from 'fs';
-import { UploaderOptions, UploadResult, ProgressCallback } from '@shared/types/uploader';
-import { TokenError, UploadError } from '@shared/utils/errors';
+import { UploaderOptions, UploadResult, ProgressCallback } from '@/common/types/uploader';
+import { TokenError, UploadError } from '@/common/utils/errors';
 import { getFileExtension } from '@/node/utils/file';
 
 export class QiniuNodeUploader {

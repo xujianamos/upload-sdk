@@ -1,4 +1,4 @@
-import { UploaderOptions, UploadResult } from '../shared/types/uploader';
+import { UploaderOptions, UploadResult } from '../common/types/uploader';
 
 export abstract class BaseUploader {
   protected options: UploaderOptions;
@@ -7,5 +7,5 @@ export abstract class BaseUploader {
     this.options = options;
   }
 
-  abstract upload(file: File | Buffer): Promise<UploadResult>;
+  abstract upload(file: File | string): Promise<UploadResult>;
 }

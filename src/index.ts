@@ -2,9 +2,9 @@ import { QiniuWebUploader } from "./platforms/qiniu/web";
 import { QiniuNodeUploader } from "./platforms/qiniu/node";
 import { AliyunWebUploader } from "./platforms/aliyun/web";
 import { AliyunNodeUploader } from "./platforms/aliyun/node";
+import { UploadSDK } from "./core/upload-sdk";
+import { products } from "./products/config";
 
-// 导入产品特定的上传器
-import { commonWebUploader,commonMacUploader } from "./products/common";
 // 基础上传器
 export {
   QiniuWebUploader,
@@ -12,17 +12,8 @@ export {
   AliyunWebUploader,
   AliyunNodeUploader,
 };
-// 产品特定上传器
-export const products = {
-  "common-web": commonWebUploader,
-  "common-mac": commonMacUploader,
-  
-};
 
-export default {
-  QiniuWebUploader,
-  QiniuNodeUploader,
-  AliyunWebUploader,
-  AliyunNodeUploader,
-  products
-};
+export { products };
+
+// 导出 UploadSDK
+export default UploadSDK;
