@@ -1,0 +1,9 @@
+{
+  "name": "@upload-sdk/qiniu-node",
+  "version": "1.0.3",
+  "main": "../../dist/qiniu-node.js",
+  "types": "../../dist/types/qiniu/qiniu-node/index.d.ts",
+  "dependencies": {
+    "qiniu": "^7.8.0"
+  }
+}

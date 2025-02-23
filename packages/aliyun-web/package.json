@@ -1,0 +1,6 @@
+{
+  "name": "@upload-sdk/aliyun-web",
+  "version": "1.0.3",
+  "main": "../../dist/aliyun-web.js",
+  "types": "../../dist/types/aliyun/aliyun-web/index.d.ts"
+}

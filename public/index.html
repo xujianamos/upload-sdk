@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload SDK Demo</title>
+</head>
+<body>
+    <div>
+        <h2>七牛云上传测试</h2>
+        <input type="file" id="qiniuFile" />
+        <button onclick="uploadToQiniu()">上传到七牛云</button>
+
+        <h2>阿里云上传测试</h2>
+        <input type="file" id="aliyunFile" />
+        <button onclick="uploadToAliyun()">上传到阿里云</button>
+    </div>
+
+    <script src="/aliyun-web.js"></script>
+    <script src="/qiniu-web.js"></script>
+    <script>
+        // 七牛云上传示例
+        async function uploadToQiniu() {
+            const uploader = new QiniuWebUploader({
+                bucket: 'your-bucket',
+                accessKey: 'your-access-key',
+                secretKey: 'your-secret-key',
+                domain: 'your-domain'
+            });
+
+            const file = document.getElementById('qiniuFile').files[0];
+            try {
+                const result = await uploader.upload(file, {}, (progress) => {
+                    console.log('上传进度：', progress);
+                });
+                console.log('上传成功：', result);
+            } catch (error) {
+                console.error('上传失败：', error);
+            }
+        }
+
+        // 阿里云上传示例
+        async function uploadToAliyun() {
+            const uploader = new AliyunWebUploader({
+                bucket: 'your-bucket',
+                accessKey: 'your-access-key',
+                secretKey: 'your-secret-key',
+                domain: 'your-domain'
+            });
+
+            const file = document.getElementById('aliyunFile').files[0];
+            try {
+                const result = await uploader.upload(file, {}, (progress) => {
+                    console.log('上传进度：', progress);
+                });
+                console.log('上传成功：', result);
+            } catch (error) {
+                console.error('上传失败：', error);
+            }
+        }
+    </script>
+</body>
+</html>

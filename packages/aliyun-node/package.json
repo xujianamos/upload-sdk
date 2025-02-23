@@ -1,0 +1,9 @@
+{
+  "name": "@upload-sdk/aliyun-node",
+  "version": "1.0.3",
+  "main": "../../dist/aliyun-node.js",
+  "types": "../../dist/types/aliyun/aliyun-node/index.d.ts",
+  "dependencies": {
+    "ali-oss": "^6.17.1"
+  }
+}
